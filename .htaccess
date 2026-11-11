@@ -1,0 +1,17 @@
+ErrorDocument 404 /404.html
+RewriteEngine On
+# força https e www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]
+# endereços do site antigo (Wix)
+Redirect 301 "/lixadeiracompacta" /lixadeira-compacta/
+Redirect 301 "/cópia-novo-layout-base" /lx750/
+Redirect 301 "/profissional" /lixadeira-profissional/
+Redirect 301 "/lixadeira-duplo-holow" /lixadeira-duplo-hollow/
+Redirect 301 "/cópia-acessórios-e-dispositivos" /acessorios/
+Redirect 301 "/retífica-de-bancada" /retifica-de-bancada/
+Redirect 301 "/post/tratamento-térmico-de-facas" /blog/tratamento-termico-de-facas/
+Redirect 301 "/bigorna" /sobre-a-guajuvira/
+Redirect 301 "/areadeclientes" /entre-em-contato/
